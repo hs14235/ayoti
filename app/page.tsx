@@ -195,39 +195,51 @@ export default function Home() {
       <section className="needinglys" id="needinglys" aria-labelledby="needinglys-title">
         <div className="needinglys__heading">
           <p className="chapter">Field note 004 / Needinglys</p>
-          <h2 id="needinglys-title">Then the world turns inward.</h2>
-          <p>
-            The topography moves into the room. Washes of pink, mint, and blue
-            pool across a body while smoke escapes, gathers, and refuses to stay
-            inside its frame.
-          </p>
+          <h2 id="needinglys-title">Dinner plate face with a green cone.</h2>
+          <div className="needinglys__story">
+            <p>
+              The colourful, headless character is a Needingly. The Needinglys
+              invaded the planet Moth for its raw nuclear energy, drawn from the
+              silos embedded in the crater. They murdered Sim—Ayoti&apos;s earth
+              god—to harvest the more potent material in his bone marrow. Water,
+              the mountain spirit, has so far evaded death at their hands.
+            </p>
+            <p>
+              A Needingly appears without a head because it has learned to
+              separate itself from its body, keeping its life safely elsewhere
+              while invading other planets. The abandoned body makes the mental
+              cost visible through smoke, neglect, and decay. Their caste system
+              turns colour into a warning: the more colourful the Needingly, the
+              worse its standing.
+            </p>
+          </div>
         </div>
 
         <figure className="needinglys__portrait">
           <ArtworkViewer
             src="/images/needinglys.png"
-            alt="Watercolor portrait of a pale pink, blue, and green figure with a pointed head exhaling dark smoke"
-            caption="Needinglys — Portrait"
+            alt="Watercolor portrait of a colourful headless Needingly with a green cone and a dinner-plate-like face exhaling dark smoke"
+            caption="Dinner Plate Face with a Green Cone"
           />
-          <figcaption>Needinglys / Portrait</figcaption>
+          <figcaption>Dinner plate face with a green cone / Needingly study</figcaption>
         </figure>
 
         <figure className="needinglys__body">
           <ArtworkViewer
             src="/images/full-body-needinglys.png"
-            alt="A seated watercolor Needingly with elongated limbs exhaling a large plume of black smoke"
-            caption="Needinglys — Full Body"
+            alt="A seated colourful headless Needingly with elongated limbs exhaling a large plume of black smoke"
+            caption="Needingly — Full Body"
           />
-          <figcaption>The body folds. The atmosphere expands.</figcaption>
+          <figcaption>The head survives elsewhere. The body reveals the cost.</figcaption>
         </figure>
 
         <figure className="needinglys__room">
           <ArtworkViewer
             src="/images/needinglys-different-prespective.png"
-            alt="A Needingly seen from behind in a painted room as dark smoke pours toward a framed opening"
-            caption="Needinglys — Different Perspective"
+            alt="A headless Needingly seen from behind in a painted room as dark smoke pours toward a framed opening"
+            caption="Needingly — Different Perspective"
           />
-          <figcaption>Different Perspective</figcaption>
+          <figcaption>More colour means lower caste.</figcaption>
         </figure>
       </section>
 

@@ -568,12 +568,19 @@ figcaption,
   max-width: 11ch;
 }
 
-.needinglys__heading > p:last-child {
-  max-width: 46ch;
+.needinglys__story {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 5vw, 76px);
+  max-width: 960px;
   margin: 42px 0 0 auto;
+}
+
+.needinglys__story p {
+  margin: 0;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.1rem, 1.7vw, 1.45rem);
-  line-height: 1.5;
+  font-size: clamp(1.02rem, 1.42vw, 1.25rem);
+  line-height: 1.58;
 }
 
 .needinglys__portrait {
@@ -913,9 +920,17 @@ figcaption,
   }
 
   .world__copy > p:last-child,
-  .needinglys__heading > p:last-child,
   .field-notes__heading > p:last-child {
     margin-top: 32px;
+  }
+
+  .needinglys__story {
+    display: block;
+    margin-top: 32px;
+  }
+
+  .needinglys__story p + p {
+    margin-top: 22px;
   }
 
   .world__landscape {
