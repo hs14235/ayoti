@@ -1,10 +1,12 @@
 import { ArtworkViewer } from './components/artwork-viewer';
+import { MobileFieldGuide } from './components/mobile-field-guide';
 import { MotionController } from './components/motion-controller';
 
 export default function Home() {
   return (
     <main>
       <MotionController />
+      <MobileFieldGuide />
       <nav className="story-nav" aria-label="Story chapters">
         <a className="story-nav__brand" href="#top" aria-label="Return to the beginning">
           D
@@ -302,7 +304,12 @@ export default function Home() {
         </p>
         <div className="footer__meta">
           <span>DIVIDID</span>
-          <a href="#top">Return to the beginning ↑</a>
+          <div className="footer__links">
+            <a href="#top">Return to the beginning ↑</a>
+            <a className="footer__email" href="mailto:minimalnotepad@protonmail.com">
+              minimalnotepad@protonmail.com
+            </a>
+          </div>
         </div>
       </footer>
     </main>

@@ -9,6 +9,12 @@ type ArtworkViewerProps = {
   eager?: boolean;
 };
 
+const LANDSCAPE_ARTWORKS = new Set([
+  '/images/energon-breeding-ground-for-dividids.png',
+  '/images/post-invasion-moth.png',
+  '/images/simonmountains.png',
+]);
+
 export function ArtworkViewer({
   src,
   alt,
@@ -19,6 +25,7 @@ export function ArtworkViewer({
   const previewSrc = src.startsWith('/images/') && src.endsWith('.png')
     ? src.replace('/images/', '/images/optimized/').replace(/\.png$/, '.webp')
     : src;
+  const isLandscape = LANDSCAPE_ARTWORKS.has(src);
 
   return (
     <>
@@ -34,6 +41,8 @@ export function ArtworkViewer({
           loading={eager ? 'eager' : 'lazy'}
           decoding="async"
           fetchPriority={eager ? 'high' : 'auto'}
+          width={isLandscape ? 2200 : 1650}
+          height={isLandscape ? 1650 : 2200}
         />
         <span className="artwork-button__hint" aria-hidden="true">
           View detail

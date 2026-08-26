@@ -65,6 +65,9 @@ export function MotionController() {
 
         if (!visible) return;
         const activeId = visible.target.id;
+        window.dispatchEvent(
+          new CustomEvent('dividid:chapter', { detail: { id: activeId } }),
+        );
         links.forEach((link) => {
           const isActive = link.hash === `#${activeId}`;
           link.classList.toggle('is-active', isActive);
@@ -91,6 +94,10 @@ export function MotionController() {
       root.style.setProperty('--hero-shift', `${heroProgress * 42}px`);
       root.style.setProperty('--hero-film-shift', `${heroProgress * 24}px`);
       root.style.setProperty('--hero-copy-opacity', `${1 - heroProgress * 0.78}`);
+      root.classList.toggle(
+        'has-entered-story',
+        window.scrollY > window.innerHeight * 0.55,
+      );
     };
 
     const requestScrollUpdate = () => {
@@ -108,6 +115,7 @@ export function MotionController() {
       root.style.removeProperty('--hero-shift');
       root.style.removeProperty('--hero-film-shift');
       root.style.removeProperty('--hero-copy-opacity');
+      root.classList.remove('has-entered-story');
       revealObserver.disconnect();
       chapterObserver.disconnect();
       window.removeEventListener('scroll', requestScrollUpdate);
