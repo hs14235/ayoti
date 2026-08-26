@@ -1,8 +1,10 @@
 import { ArtworkViewer } from './components/artwork-viewer';
+import { MotionController } from './components/motion-controller';
 
 export default function Home() {
   return (
     <main>
+      <MotionController />
       <nav className="story-nav" aria-label="Story chapters">
         <a className="story-nav__brand" href="#top" aria-label="Return to the beginning">
           D

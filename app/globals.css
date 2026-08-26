@@ -11,6 +11,10 @@
   --quiet: #756f63;
   --wash-pink: #dec7d2;
   --wash-mint: #cbded3;
+  --page-progress: 0;
+  --hero-shift: 0px;
+  --hero-film-shift: 0px;
+  --hero-copy-opacity: 1;
 }
 
 * {
@@ -19,6 +23,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 24px;
   background: var(--ink);
 }
 
@@ -52,6 +57,28 @@ video {
 ::selection {
   background: var(--sulfur);
   color: var(--ink);
+}
+
+.scroll-progress {
+  position: fixed;
+  z-index: 80;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.scroll-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--sulfur-bright);
+  box-shadow: 0 0 18px rgb(240 228 74 / 45%);
+  transform: scaleX(var(--page-progress));
+  transform-origin: left;
+  will-change: transform;
 }
 
 .chapter,
@@ -107,6 +134,7 @@ figcaption,
 }
 
 .story-nav__chapters a {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -114,6 +142,27 @@ figcaption,
   letter-spacing: 0.12em;
   text-transform: uppercase;
   writing-mode: vertical-rl;
+  opacity: 0.5;
+  transition: opacity 280ms ease, transform 280ms ease;
+}
+
+.story-nav__chapters a::before {
+  content: '';
+  width: 1px;
+  height: 0;
+  background: currentColor;
+  transition: height 320ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.story-nav__chapters a:hover,
+.story-nav__chapters a:focus-visible,
+.story-nav__chapters a.is-active {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.story-nav__chapters a.is-active::before {
+  height: 22px;
 }
 
 .story-nav__chapters span {
@@ -141,6 +190,14 @@ figcaption,
 .hero__film {
   z-index: -2;
   object-fit: cover;
+  opacity: 0;
+  transform: translate3d(0, var(--hero-film-shift), 0) scale(1.045);
+  animation: film-arrives 1.5s 120ms cubic-bezier(0.2, 0.65, 0.2, 1) forwards;
+  will-change: transform;
+}
+
+@keyframes film-arrives {
+  to { opacity: 1; }
 }
 
 .hero__veil {
@@ -176,6 +233,9 @@ figcaption,
   position: absolute;
   left: clamp(24px, 8vw, 120px);
   bottom: clamp(110px, 18vh, 190px);
+  opacity: var(--hero-copy-opacity);
+  transform: translate3d(0, var(--hero-shift), 0);
+  will-change: opacity, transform;
 }
 
 .eyebrow {
@@ -200,6 +260,12 @@ figcaption,
   display: flex;
   align-items: center;
   gap: 18px;
+}
+
+.hero__enter:hover .hero__line,
+.hero__enter:focus-visible .hero__line {
+  animation-play-state: paused;
+  transform: scaleX(1.15);
 }
 
 .hero__line {
@@ -683,7 +749,8 @@ figcaption,
 
 .artwork-button img {
   width: 100%;
-  transition: transform 600ms cubic-bezier(0.2, 0.65, 0.25, 1), filter 600ms ease;
+  transform: scale(1.001);
+  transition: transform 850ms cubic-bezier(0.16, 0.8, 0.2, 1), filter 600ms ease;
 }
 
 .artwork-button__hint {
@@ -705,7 +772,7 @@ figcaption,
 
 .artwork-button:hover img {
   filter: contrast(1.04);
-  transform: scale(1.012);
+  transform: scale(1.025);
 }
 
 .artwork-button:hover .artwork-button__hint,
@@ -729,6 +796,25 @@ figcaption,
   border: 0;
   background: rgb(12 12 11 / 96%);
   color: var(--paper);
+  opacity: 0;
+  transform: scale(0.985);
+  transition:
+    opacity 240ms ease,
+    transform 320ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    overlay 240ms allow-discrete,
+    display 240ms allow-discrete;
+}
+
+.artwork-dialog[open] {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@starting-style {
+  .artwork-dialog[open] {
+    opacity: 0;
+    transform: scale(0.985);
+  }
 }
 
 .artwork-dialog::backdrop {
@@ -778,6 +864,20 @@ figcaption,
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+}
+
+.motion-ready .scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 38px, 0);
+  transition:
+    opacity 760ms cubic-bezier(0.2, 0.68, 0.2, 1) var(--reveal-delay, 0ms),
+    transform 920ms cubic-bezier(0.16, 0.8, 0.2, 1) var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.motion-ready .scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 @media (max-width: 900px) {
@@ -1021,6 +1121,30 @@ figcaption,
 
   .hero__line {
     animation: none;
+  }
+
+  .hero__film {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .hero__title {
+    opacity: 1;
+    transform: none;
+  }
+
+  .scroll-progress span,
+  .story-nav__chapters a,
+  .story-nav__chapters a::before,
+  .motion-ready .scroll-reveal,
+  .artwork-dialog {
+    transition: none;
+  }
+
+  .motion-ready .scroll-reveal {
+    opacity: 1;
+    transform: none;
   }
 
   .artwork-button img,

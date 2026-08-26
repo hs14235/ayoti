@@ -28,7 +28,13 @@ export function ArtworkViewer({
         onClick={() => dialogRef.current?.showModal()}
         aria-label={`View ${caption} in full screen`}
       >
-        <img src={previewSrc} alt={alt} loading={eager ? 'eager' : 'lazy'} />
+        <img
+          src={previewSrc}
+          alt={alt}
+          loading={eager ? 'eager' : 'lazy'}
+          decoding="async"
+          fetchPriority={eager ? 'high' : 'auto'}
+        />
         <span className="artwork-button__hint" aria-hidden="true">
           View detail
         </span>
