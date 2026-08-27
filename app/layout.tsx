@@ -1,14 +1,19 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dividid.github.io/ayoti';
+const publicAsset = (path: string) => `${basePath}${path}`;
+const absoluteAsset = (path: string) => `${siteUrl}${path}`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dividid.github.io'),
+  metadataBase: new URL(siteUrl),
   title: 'Dividid — An illustrated world by Siri',
   description:
     'Enter Dividid, an intricate hand-drawn world of strange ecologies, watchful mountains, and patient mark-making by Siri.',
   icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.png',
+    icon: publicAsset('/favicon.png'),
+    apple: publicAsset('/favicon.png'),
   },
   openGraph: {
     title: 'Dividid — An illustrated world by Siri',
@@ -17,7 +22,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og.png',
+        url: absoluteAsset('/og.png'),
         width: 1731,
         height: 909,
         alt: 'DIVIDID — An illustrated world by Siri',
@@ -29,7 +34,7 @@ export const metadata: Metadata = {
     title: 'Dividid — An illustrated world by Siri',
     description:
       'A hand-drawn world of strange ecologies, watchful mountains, and patient mark-making.',
-    images: ['/og.png'],
+    images: [absoluteAsset('/og.png')],
   },
 };
 

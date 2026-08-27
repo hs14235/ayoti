@@ -3,6 +3,8 @@ import { MobileFieldGuide } from './components/mobile-field-guide';
 import { MotionController } from './components/motion-controller';
 
 export default function Home() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
   return (
     <main>
       <MotionController />
@@ -30,8 +32,8 @@ export default function Home() {
           preload="auto"
           aria-label="Animated introduction to Dividid"
         >
-          <source src="/videos/intro-to-website.mp4" type="video/mp4" />
-          <source src="/videos/intro-to-website.mov" type="video/quicktime" />
+          <source src={`${basePath}/videos/intro-to-website.mp4`} type="video/mp4" />
+          <source src={`${basePath}/videos/intro-to-website.mov`} type="video/quicktime" />
         </video>
         <div className="hero__veil" />
         <header className="hero__header">
@@ -296,7 +298,7 @@ export default function Home() {
 
       <footer className="footer">
         <div className="footer__mark" aria-hidden="true">
-          <img src="/images/Siri-leg-tattoo.png" alt="" />
+          <img src={`${basePath}/images/Siri-leg-tattoo.png`} alt="" />
         </div>
         <p className="footer__eyebrow">A living archive</p>
         <p className="footer__statement">

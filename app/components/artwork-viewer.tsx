@@ -22,9 +22,12 @@ export function ArtworkViewer({
   eager = false,
 }: ArtworkViewerProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const previewSrc = src.startsWith('/images/') && src.endsWith('.png')
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+  const previewPath = src.startsWith('/images/') && src.endsWith('.png')
     ? src.replace('/images/', '/images/optimized/').replace(/\.png$/, '.webp')
     : src;
+  const previewSrc = `${basePath}${previewPath}`;
+  const fullSrc = `${basePath}${src}`;
   const isLandscape = LANDSCAPE_ARTWORKS.has(src);
 
   return (
@@ -65,7 +68,7 @@ export function ArtworkViewer({
           </button>
         </form>
         <div className="artwork-dialog__stage">
-          <img src={src} alt={alt} />
+          <img src={fullSrc} alt={alt} />
           <p>{caption}</p>
         </div>
       </dialog>
