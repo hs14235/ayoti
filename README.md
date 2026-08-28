@@ -1,6 +1,6 @@
 # AYOTI / DIVIDID
 
-![Intro](ayoti/work/pages-preview/ayoti/videos/README.gif).
+![Intro](ayoti/public/videos/README.gif).
 
 
 *An illustrated world and narrative portfolio for Siri (Dividid), built around her original ink, watercolor, and mixed-media artwork.*
