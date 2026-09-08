@@ -637,17 +637,34 @@ figcaption,
   max-width: 10ch;
 }
 
-.field-notes__heading > p:last-child {
-  max-width: 47ch;
-  margin: 40px 0 0 auto;
-  color: rgb(238 233 220 / 70%);
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  line-height: 1.65;
+.field-notes__species {
+  position: relative;
+  z-index: 1;
+  grid-column: 1 / -1;
+  width: min(100%, 880px);
+  margin: clamp(70px, 9vw, 135px) auto 0 !important;
+}
+
+.field-notes__species figcaption {
+  max-width: 66ch;
+  margin: 28px auto 0;
+  color: rgb(238 233 220 / 78%);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  line-height: 1.68;
+}
+
+.field-notes__species figcaption p {
+  margin: 0;
+}
+
+.field-notes__species figcaption p + p {
+  margin-top: 1.15em;
 }
 
 .field-notes__sheet {
   grid-column: 1;
-  margin-top: clamp(80px, 11vw, 165px) !important;
+  margin-top: clamp(100px, 13vw, 190px) !important;
 }
 
 .field-notes__dividid {
@@ -1179,7 +1196,7 @@ figcaption,
   }
 
   .world__copy > p:last-child,
-  .field-notes__heading > p:last-child {
+  .field-notes__species figcaption {
     margin-top: 32px;
   }
 
@@ -1345,6 +1362,7 @@ figcaption,
   }
 
   .needinglys__portrait,
+  .field-notes__species,
   .field-notes__sheet {
     width: 100%;
   }

@@ -251,12 +251,33 @@ export default function Home() {
         <div className="field-notes__heading">
           <p className="chapter chapter--light">Field note 005 / The archive</p>
           <h2 id="notes-title">Nothing here is merely sketched.</h2>
-          <p>
-            The world continues in studies, names, variants, and marginal
-            questions. These are not leftovers. They are the architecture beneath
-            the finished image.
-          </p>
         </div>
+
+        <figure className="field-notes__species">
+          <ArtworkViewer
+            src="/images/bluebiolume.png"
+            alt="A blue, black, and white sketchbook study of a horned DIVIDID with pointed ears and sharp teeth"
+            caption="DIVIDID — Species Study"
+          />
+          <figcaption>
+            <p>
+              The DIVIDIDs, like humans, are the dominant species on the planet
+              MOTH (no relation to “moth” in human language). DIVIDIDs have thick
+              auburn-to-white hair, depending on subtype, across their bodies
+              besides the face, hands, and feet. They have large, pointed ears
+              with white tufts of hair growing from the inner ear.
+            </p>
+            <p>
+              An average DIVIDID grows to seven feet tall and weighs 210 lb of
+              muscle, as they have limited body fat. They have pointed,
+              vampiric-like teeth and minimal lips due to the size of their mouths
+              in proportion to their heads. They do not wear clothes, and they
+              communicate through verbal calls or low tones similar to those of
+              elephants. This communication may seem limited to human perception,
+              though it is comparable in complexity to human language.
+            </p>
+          </figcaption>
+        </figure>
 
         <figure className="field-notes__sheet">
           <ArtworkViewer
