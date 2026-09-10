@@ -253,31 +253,130 @@ export default function Home() {
           <h2 id="notes-title">Nothing here is merely sketched.</h2>
         </div>
 
-        <figure className="field-notes__species">
-          <ArtworkViewer
-            src="/images/bluebiolume.png"
-            alt="A blue, black, and white sketchbook study of a horned DIVIDID with pointed ears and sharp teeth"
-            caption="DIVIDID — Species Study"
-          />
-          <figcaption>
-            <p>
-              The DIVIDIDs, like humans, are the dominant species on the planet
-              MOTH (no relation to “moth” in human language). DIVIDIDs have thick
-              auburn-to-white hair, depending on subtype, across their bodies
-              besides the face, hands, and feet. They have large, pointed ears
-              with white tufts of hair growing from the inner ear.
-            </p>
-            <p>
-              An average DIVIDID grows to seven feet tall and weighs 210 lb of
-              muscle, as they have limited body fat. They have pointed,
-              vampiric-like teeth and minimal lips due to the size of their mouths
-              in proportion to their heads. They do not wear clothes, and they
-              communicate through verbal calls or low tones similar to those of
-              elephants. This communication may seem limited to human perception,
-              though it is comparable in complexity to human language.
-            </p>
-          </figcaption>
-        </figure>
+        <article
+          className="field-note-entry field-note-entry--dividids"
+          aria-labelledby="dividids-note-title"
+        >
+          <div className="field-note-entry__copy">
+            <div className="field-note-entry__title">
+              <p className="chapter chapter--light">Field note 005-A / Species</p>
+              <h3 id="dividids-note-title">The DIVIDIDs</h3>
+            </div>
+            <div className="field-note-entry__body">
+              <p>
+                The DIVIDIDs, like humans, are the dominant species on the planet
+                MOTH—unrelated to the word ‘moth’ in human language.
+              </p>
+              <p>
+                Depending on their subtype, DIVIDIDs have thick auburn-to-white
+                hair covering their bodies except for their faces, hands, and
+                feet. They have large, pointed ears with white tufts growing from
+                the inner ear. An average DIVIDID grows to approximately seven
+                feet tall and weighs around 210 pounds, primarily in muscle due
+                to their limited body fat.
+              </p>
+              <p>
+                Their anatomy includes pointed, vampiric teeth, minimal lips, and
+                a disproportionately large mouth. DIVIDIDs do not wear clothing.
+                They communicate through verbal calls and low-frequency tones
+                similar to those used by elephants. To human perception, this
+                communication may initially appear limited, although observations
+                suggest it possesses a complexity comparable to human language.
+              </p>
+            </div>
+          </div>
+
+          <div className="field-note-gallery" aria-label="Six DIVIDID field studies">
+            <figure>
+              <ArtworkViewer
+                src="/images/ayotiexclaimed.png"
+                alt="Black-and-white sketchbook portrait of a pointed-eared DIVIDID beneath a dark speech shape reading AYOTI"
+                caption="AYOTI — Exclaimed"
+              />
+              <figcaption><span>01</span> AYOTI / Exclaimed</figcaption>
+            </figure>
+            <figure>
+              <ArtworkViewer
+                src="/images/cryingdivididroom.png"
+                alt="A crying DIVIDID seated in a softly colored room beside a table and window"
+                caption="Crying DIVIDID — Interior Study"
+              />
+              <figcaption><span>02</span> Crying DIVIDID / Interior study</figcaption>
+            </figure>
+            <figure>
+              <ArtworkViewer
+                src="/images/darkbackgrounddividid.png"
+                alt="A pale DIVIDID face with pointed ears emerging from a heavily shaded black background"
+                caption="DIVIDID — Dark Study"
+              />
+              <figcaption><span>03</span> DIVIDID / Dark study</figcaption>
+            </figure>
+            <figure>
+              <ArtworkViewer
+                src="/images/olderSIM.png"
+                alt="An early ink study of SIM as a tall, dark, antlered figure standing over a textured landscape"
+                caption="Older SIM — Early Study"
+              />
+              <figcaption><span>04</span> Older SIM / Early study</figcaption>
+            </figure>
+            <figure>
+              <ArtworkViewer
+                src="/images/circleddividiinstreet.png"
+                alt="A small DIVIDID standing in a street scene between buildings, fences, utility poles, and distant mountains"
+                caption="DIVIDID in the Street — Circled Study"
+              />
+              <figcaption><span>05</span> DIVIDID in the street / Circled study</figcaption>
+            </figure>
+            <figure>
+              <ArtworkViewer
+                src="/images/treeoflifedividid.png"
+                alt="A pointed, long-limbed DIVIDID beside water beneath an arching tree-of-life form"
+                caption="Tree of Life DIVIDID"
+              />
+              <figcaption><span>06</span> Tree of Life DIVIDID</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article
+          className="field-note-entry field-note-entry--gahn"
+          aria-labelledby="gahn-note-title"
+        >
+          <div className="field-note-entry__copy">
+            <div className="field-note-entry__title">
+              <p className="chapter chapter--light">Field note 005-B / Fauna</p>
+              <h3 id="gahn-note-title">The GAHN</h3>
+            </div>
+            <div className="field-note-entry__body">
+              <p>
+                The DIVIDIDs inhabit the grasslands and forests surrounding the
+                base of AYOTI-UT—a mountain whose name means ‘twin peaks’ in their
+                language. They are carnivorous nomads who travel in tribes of
+                more than sixty members.
+              </p>
+              <p>
+                Some tribes have domesticated local wildlife to transport goods
+                between settlements. One such species is the GAHN: a spider-like,
+                bioluminescent creature capable of carrying eight times its own
+                body mass. A GAHN has been observed transporting upwards of
+                eighty tons toward a trading post southwest of AYOTI-UT.
+              </p>
+              <p>
+                The DIVIDIDs raise and rear GAHNs with exceptional skill,
+                demonstrating highly developed animal-husbandry practices.
+              </p>
+            </div>
+          </div>
+
+          <figure className="field-note-entry__hero">
+            <ArtworkViewer
+              src="/images/bluebiolume.png"
+              alt="A blue, black, and white sketchbook study of a massive spider-like GAHN with long jointed limbs"
+              caption="GAHN — Bioluminescent Transport Study"
+            />
+            <figcaption>GAHN / Bioluminescent transport study</figcaption>
+          </figure>
+        </article>
 
         <figure className="field-notes__sheet">
           <ArtworkViewer

@@ -16,6 +16,7 @@ export function MotionController() {
           '.ayoti__heading',
           '.needinglys__heading',
           '.field-notes__heading',
+          '.field-note-entry__copy',
           'main figure',
           '.world__aside',
           '.footer__eyebrow',
